@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PRESUPUESTO</title>
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-3.4.1.js"></script>
+<script src="js/jquery-ui.js"></script>  
+<script src="js/js.js"></script>  
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/presupuesto.css"> 
+<meta charset="UTF-8">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="img/poli.png" width="30" height="30" class="d-inline-block align-top" alt="">SISPOLAD v1.2 - 2020</a>
+        <button type="button" class="btn-dark" name="imprimir" value="Imprimir" onclick="window.print();">IMPRIMIR</button>
+        <button type="button" class="btn-dark" onclick="location.reload();">RESET</button> 
+        <font color="WHITE"><marquee><b>Sistema de Facturacion Policía Adicional URI</b></marquee></font>  
+    </nav>
+<div class="container">
+<!-- BARRA TITULO -->
+    <div class="row mt-2 p-3 mb-2 bg-light">
+        <div class="col-5">
+            <p class="h5 text-left"><img src="img/Policia_santafe_emblem.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            SECCIÓN POLICÍA ADICIONAL</p>
+            <p>PRESUPUESTO POLICÍA DE SANTA FE- UR"I"</p>
+        </div>
+        <div class="col-2"><p class="h6 text-center">
+            <img src="img/tel.png" width="20" height="20" class="d-inline-block align-top" alt="">
+             0342-4589494</p>
+        </div>
+        <div class="col-5"><p class="h6 text-right">
+            <img src="img/correo2.png" width="20" height="20" class="d-inline-block align-top" alt="">
+            policiaadicionalsantafe@gmail.com</p>
+          </a>
+          
+        </div>
+    </div>
+ <!-- BARRA DATOS -->    
+    <div class="row ">
+    <table class="table table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th>ENTIDAD REQUIRIENTE:</th>
+                <th>LUGAR DEL SERVICIO:</th>
+                <th>FECHA/S:</th>
+                </tr>
+        </thead>
+        <tr>
+        <td>
+        <input type="text" class="form-control form-control-sm" id="info1">
+ <select id="ENTIDAD" class="form-control form-control-sm" name="ENTIDAD">
+            <option value="" >PRIVADA</option>
+            <option value="" >PUBLICA</option>
+        </select>
+    </td>
+       
+         <td>
+        <input type="text" class="form-control form-control-sm" id="info2" ></td>
+        
+        <td>
+        <input type="text" class="form-control form-control-sm" id="datepicker0"></td>
+        </tr>
+    </table>
+</div>
+<!-- BARRA PRESUPUESTO -->
+<div class="row ">
+<table class="table table-sm">
+        <thead class="thead-light">
+    <form id="presupuesto">
+     <tr>
+     <th>Fecha/s</th>
+     <th>Horario del Servicio</th>
+     <th>Cantidad de Horas</th>
+     <th>Cantidad de Efectivos</th>
+     <th>Tipo de Hora</th>
+     <th>Importe</th>
+     </tr>
+     </thead>
+     <tr>
+     <td><input type="text" class="form-control form-control-sm" id="datepicker"></td>
+     <td><input type="text" class="form-control form-control-sm" id="horario"></td>
+     <td><input type="number" class="form-control form-control-sm" id= "servicio" name="servicio" size="3" value="0">        </td>
+     <td><input type="number" class="form-control form-control-sm" id="efectivos" name="efectivos" value="0" /></td>
+     <td><select id="horas" class="form-control form-control-sm" name="horas">
+         <option value="351" >Ordinaria Privado</option>
+         <option value="421.20" >Extraordinaria Privado</option>
+         <option value="254" >Ordinaria Publico</option>
+         <option value="304.80" >Extraordinaria Publico</option>
+     </select></td>
+     <td><span id="spTotal"></span></td>
+     </tr>
+
+     <tr>
+     <td><input type="text" class="form-control form-control-sm" id="datepicker2"></td>
+     <td><input type="text" class="form-control form-control-sm" id="horario2"></td>
+     <td><input type="number" class="form-control form-control-sm" id= "servicio2" name="servicio2" size="3" value="0">        </td>
+     <td><input type="number" class="form-control form-control-sm" id="efectivos2" name="efectivos2" value="0" /></td>
+     <td><select id="horas2" class="form-control form-control-sm" name="horas2">
+         <option value="351" >Ordinaria Privado</option>
+         <option value="421.20" >Extraordinaria Privado</option>
+         <option value="254" >Ordinaria Publico</option>
+         <option value="304.80" >Extraordinaria Publico</option>
+     </select></td>
+     <td><span id="spTotal2"></span></td>
+     </tr>
+
+     <tr>
+         <td><input type="text" class="form-control form-control-sm" id="datepicker3"></td>
+         <td><input type="text" class="form-control form-control-sm" id="horario3"></td>
+         <td><input type="number" class="form-control form-control-sm"id= "servicio3" name="servicio3" size="3" value="0">        </td>
+         <td><input type="number" class="form-control form-control-sm"id="efectivos3" name="efectivos3" value="0" /></td>
+         <td><select id="horas3" class="form-control form-control-sm" name="horas3">
+             <option value="351" >Ordinaria Privado</option>
+             <option value="421.20" >Extraordinaria Privado</option>
+             <option value="254" >Ordinaria Publico</option>
+             <option value="304.80" >Extraordinaria Publico</option>
+         </select></td>
+         <td><span id="spTotal3"></span></td>
+         </tr>
+
+       <tr>
+           <td><input type="text" class="form-control form-control-sm" id="datepicker4"></td>
+           <td><input type="text" class="form-control form-control-sm" id="horario4"></td>
+           <td><input type="number" class="form-control form-control-sm" id= "servicio4" name="servicio4" size="3" value="0">        </td>
+           <td><input type="number" class="form-control form-control-sm" id="efectivos4" name="efectivos4" value="0" /></td>
+           <td><select id="horas4" class="form-control form-control-sm" name="horas4">
+               <option value="351" >Ordinaria Privado</option>
+               <option value="421.20" >Extraordinaria Privado</option>
+               <option value="254" >Ordinaria Publico</option>
+               <option value="304.80" >Extraordinaria Publico</option>
+           </select></td>
+           <td><span id="spTotal4"></span></td>
+           </tr>
+          <tr>
+               <td><input type="text" class="form-control form-control-sm" id="datepicker5"></td>
+               <td><input type="text" class="form-control form-control-sm" id="horario5"></td>
+               <td><input type="number" class="form-control form-control-sm" id= "servicio5" name="servicio5" size="3" value="0">        </td>
+               <td><input type="number" class="form-control form-control-sm" id="efectivos5" name="efectivos5" value="0" /></td>
+               <td><select id="horas5" class="form-control form-control-sm" name="horas5">
+                   <option value="351" >Ordinaria Privado</option>
+                   <option value="421.20" >Extraordinaria Privado</option>
+                   <option value="254" >Ordinaria Publico</option>
+                   <option value="304.80" >Extraordinaria Publico</option>
+               </select></td>
+               <td><span id="spTotal5"></span></td>
+               </tr>
+         
+                <tr>
+          <td><input type="text" class="form-control form-control-sm" id="datepicker6"></td>
+          <td><input type="text" class="form-control form-control-sm" id="horario6"></td>
+          <td><input type="number" class="form-control form-control-sm"  id= "servicio6" name="servicio6" size="3" value="0">        </td>
+          <td><input type="number" class="form-control form-control-sm"  id="efectivos6" name="efectivos6" value="0" /></td>
+          <td><select id="horas6"  class="form-control form-control-sm" name="horas6">
+              <option value="351" >Ordinaria Privado</option>
+              <option value="421.20" >Extraordinaria Privado</option>
+              <option value="254" >Ordinaria Publico</option>
+              <option value="304.80" >Extraordinaria Publico</option>
+          </select></td>
+          <td><span id="spTotal6"></span></td>
+          </tr>
+          <tr>
+              <td><input type="text" class="form-control form-control-sm" id="datepicker7"></td>
+              <td><input type="text" class="form-control form-control-sm" id="horario7"></td>
+              <td><input type="number" class="form-control form-control-sm" id= "servicio7" name="servicio7" size="3" value="0">        </td>
+              <td><input type="number" class="form-control form-control-sm" id="efectivos7" name="efectivos7" value="0" /></td>
+              <td><select id="horas7" class="form-control form-control-sm" name="horas7">
+                  <option value="351" >Ordinaria Privado</option>
+                  <option value="421.20" >Extraordinaria Privado</option>
+                  <option value="254" >Ordinaria Publico</option>
+                  <option value="304.80" >Extraordinaria Publico</option>
+              </select></td>
+              <td><span id="spTotal7"></span></td>
+                   </tr>
+                     
+       <tr>
+           <td><input type="text" class="form-control form-control-sm" id="datepicker8"></td>
+           <td><input type="text" class="form-control form-control-sm" id="horario8"></td>
+           <td><input type="number" class="form-control form-control-sm" id= "servicio8" name="servicio8" size="3" value="0">        </td>
+           <td><input type="number" class="form-control form-control-sm" id="efectivos8" name="efectivos8" value="0" /></td>
+           <td><select id="horas8" class="form-control form-control-sm" name="horas8">
+               <option value="351.00" >Ordinaria Privado</option>
+               <option value="421.20" >Extraordinaria Privado</option>
+               <option value="254.00" >Ordinaria Publico</option>
+               <option value="304.80" >Extraordinaria Publico</option>
+           </select></td>
+           <td><span id="spTotal8"></span></td>
+           </tr>
+           <tr>
+               <td><input type="text" class="form-control form-control-sm" id="datepicker9"></td>
+               <td><input type="text" class="form-control form-control-sm"id="horario9"></td>
+               <td><input type="number" class="form-control form-control-sm" id= "servicio9" name="servicio9" size="3" value="0">        </td>
+               <td><input type="number" class="form-control form-control-sm" id="efectivos9" name="efectivos9" value="0" /></td>
+               <td><select id="horas9" class="form-control form-control-sm" name="horas9">
+                   <option value="351" >Ordinaria Privado</option>
+                   <option value="421.20" >Extraordinaria Privado</option>
+                   <option value="254" >Ordinaria Publico</option>
+                   <option value="304.80" >Extraordinaria Publico</option>
+               </select></td>
+               <td><span id="spTotal9"></span></td>
+               </tr>
+               <tr>
+                   <td><input type="text" class="form-control form-control-sm" id="datepicker10"></td>
+                   <td><input type="text" class="form-control form-control-sm" id="horario10"></td>
+                   <td><input type="number" class="form-control form-control-sm" id= "servicio10" name="servicio10" size="3" value="0">        </td>
+                   <td><input type="number" class="form-control form-control-sm" id="efectivos10" name="efectivos10" value="0" /></td>
+                   <td><select id="horas10" class="form-control form-control-sm" name="horas10">
+                       <option value="351" >Ordinaria Privado</option>
+                       <option value="421.20" >Extraordinaria Privado</option>
+                       <option value="254" >Ordinaria Publico</option>
+                       <option value="304.80" >Extraordinaria Publico</option>
+                   </select></td>
+                   <td><span id="spTotal10"></span></td>
+                   </tr>
+       
+    </form>
+ </table>
+ </div>
+<!-- div Resultado -->
+ <div class="row">
+<div class="col-7">
+<button type="button" class="btn-dark" onclick="clic()">TOTAL</button>
+
+</div>
+<div class="col-5">
+    <h3><span>Horas totales:</span> <span id="horastotal"></span></h4>
+    <h3><span>Total: $</span> <span id="final"></span></h4>
+     <br><br>
+</div>
+</div>
+<!-- div Prestaciones -->
+<div  class="row mt-2 p-3 mb-2 bg-light">
+    <div class="col">
+<p class="h5"> PRESTACIONES ACCESORIAS - COMPLEJIDAD</p>
+<input type="button" class="btn-dark" id="mostrar" name="boton1" value="+">
+<input type="button" class="btn-dark" id="ocultar" name="boton2" value="-">
+    </div>
+    <div class="col-3">
+        
+                <select id="complejidad" class="form-control form-control-sm" name="complejidad">
+                <option value="baja" >BAJA</option>
+                <option value="media" >MEDIA</option>
+                <option value="alta" >ALTA</option>
+            </select></p>
+    </div>
+</div>
+<div id="target"  class="row">
+<table class="table table-sm">    
+    <form id="prestaciones">
+     <th></th>
+     <th>REQUERIDOS:</th>
+     <th>HORARIOS:</th>
+     <th>CANTIDAD</th>
+     
+     </tr>
+   
+     <tr>
+         <td>UNIDADES MOTORIZADAS:</td>
+         <td><select class="form-control form-control-sm" id="MOTORIZADAS">
+            <option value="NO" >NO</option>
+            <option value="SI" >SI</option>
+            </select></td>
+        <td><input type="text" class="form-control form-control-sm" id= "km" name="km"> </td>
+        <td><input type="number" class="form-control form-control-sm" id= "km" name="km" size="3" value="0"> </td>
+        </tr>
+    </tr>
+    <tr>
+        <td>EQUINOS:</td>
+        <td><select class="form-control form-control-sm" id="EQUINOS">
+           <option value="NO" >NO</option>
+           <option value="SI" >SI</option>
+           </select></td>
+       <td><input type="text" id= "km" name="km" class="form-control form-control-sm"> </td>
+       <td><input type="number" class="form-control form-control-sm" id= "km" name="km" size="3" value="0"> </td>
+       </tr>
+   </tr>
+   <tr>
+    <td>CANES:</td>
+    <td><select  class="form-control form-control-sm" id="CANES">
+       <option value="NO" >NO</option>
+       <option value="SI" >SI</option>
+       </select></td>
+   <td><input type="text" id= "km" name="km" class="form-control form-control-sm"> </td>
+   <td><input type="number" class="form-control form-control-sm" id= "km" name="km" size="3" value="0"> </td>
+   </tr>
+</tr>
+<tr>
+<td>ARMAS LARGAS/OTROS::</td>
+<td><select class="form-control form-control-sm" id="ARMASL">
+   <option value="NO" >NO</option>
+   <option value="SI" >SI</option>
+   </select></td>
+<td><input type="text" id= "km" name="km" class="form-control form-control-sm"> </td>
+<td><input type="number" class="form-control form-control-sm" id= "km" name="km" size="3" value="0"> </td>
+</tr>
+</tr>
+<tr>
+<td>EQUIPOS DE COMUNICACIÓN::</td>
+<td><select class="form-control form-control-sm" id="HT">
+<option value="NO" >NO</option>
+<option value="SI" >SI</option>
+</select></td>
+<td><input type="text" id= "km" name="km" class="form-control form-control-sm""> </td>
+<td><input type="number" class="form-control form-control-sm" id= "km" name="km" size="3" value="0"> </td>
+</tr>
+</tr>
+<tr>
+<td>EQUIPOS DE COMUNICACIÓN::</td>
+<td><select class="form-control form-control-sm" id="HT">
+<option value="NO" >NO</option>
+<option value="SI" >SI</option>
+</select></td>
+<td><input type="text" id= "km" name="km" class="form-control form-control-sm"> </td>
+<td><input type="number" class="form-control form-control-sm" id= "km" name="km" size="3" value="0"> </td>
+</tr>
+</tr>
+</form></table>
+</div>
+<div id="target" class="row">
+    <div class="col">
+<p class="h5"> KILOMETROS RECORRIDOS:<input type="number" class="form-control form-control-sm" id= "km" name="km"></p>
+    </div>
+    <div class="col">
+        <p class="h5"> TOTAL:<input type="text" class="form-control form-control-sm" id= "totalcomplejidad">
+    </div>
+</div>
+
+
+<!-- div DATOS -->
+<div class="row mt-2 p-3 mb-2">
+               
+    <div class="col-3">
+    <p><b>PARA TOTAL DE HORAS POR EFECTIVOS REQUERIDOS:</b></p>
+    <p>Cuenta Corriente N: 9121/05</p>				
+   <p>DESTINATARIO: Jefatura de Policía de la Capital Santa Fe</p>
+   <p>CBU 33005995-15990009121/058</p>
+   <p>CUIL 30-99901844-7</p>
+</div>
+<div class="col-3">
+   <p><b>PARA PRESTACIONES ACCESORIAS:</b></p>			
+   <p>Cuenta Corriente N: 9121/05</p>			
+   <p>DESTINATARIO: Jefatura de Policía de la Capital Santa Fe</p>			
+   <p>CBU 33005995-15990009121/058</p>			
+   <p>CUIL 30-99901844-7</p>			             
+</div>
+<div class="col"><br><br><br><br><br><br><br><br><br>
+    <p class="text-center"><ins><b>FIRMA, ACLARACION Y<br> DNI DEL REQUIRENTE</b></ins></p>			
+   		             
+ </div>
+ <div class="col"><br><br><br><br><br><br><br><br><br>
+    <p class="text-center"><ins><b>FIRMA Y ACLARACION <br>DEL EVALUADOR</b></ins></p>			
+   		             
+ </div>
+</div>
+
+<div>
+
+</div>
+</div><!-- div container -->
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><img src="img/poli.png" width="30" height="30" class="d-inline-block align-top" alt="">By Oficial Castañeira Luis - Solidlucho@gmail.com - 2020</a>
+  </nav>
+</body>
+</html>
