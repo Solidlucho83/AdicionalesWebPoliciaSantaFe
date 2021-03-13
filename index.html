@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ADICIONALES URI</title>
+<link rel="stylesheet" href="css/jquery-ui.css">
+<script src="js/jquery-3.4.1.js"></script>
+<script src="js/jquery-ui.js"></script>  
+<script src="js/js2.js"></script>  
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="css/presupuesto.css"> -->
+<meta charset="UTF-8">
+<style>
+footer {
+  font-size: 11px;
+  margin-top: 15px;
+  text-align: justify;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+ <nav class="navbar navbar-dark bg-dark">
+ <a class="navbar-brand" href="#"><img src="img/poli.png" width="30" height="30" class="d-inline-block align-top" alt="">ADICIONALES URI</a>
+        
+ </nav>
+    
+    
+<div class="container">
+  <div class="row mt-2">
+    <div class="col">
+            <p><b>AdicionalesURI</b> es un sitio informativo, donde puedes realizar tus cálculos totales, para el costo y/o ganancia del servicio 
+      de Policía Adicional en la Provincia de Santa Fe.</p>
+      <p>Después de Rellenar los cuadros, presiona el botón de <b>TOTAL</b> para obtener tu resultado.</p>
+      <p>A su vez dispones para generar una impresion, con el botón <b>IMPRIMIR</b>.</p>
+      <p><b>Ultima Actualización de Valores: 14 de Febrero de 2020.</b></p>
+  </div></div>  
+  <!-- BARRA PRESUPUESTO -->
+
+
+<div class="row mt-2 p-3 mb-2 bg-light">
+  <div class="col">
+    <h2><p>Cálculo Rápido:</p></h2>
+    <form>
+      <div class="form-group">
+        <label for="horas0">Cantidad de Horas:</label>
+        <input type="number" class="form-control form-control-sm" id= "horas0" size="3" value="0">
+      </div>
+      <div class="form-group">
+        <label for="serviciorapido">Servicio:</label>
+        <select id="servicio0" class="form-control form-control-sm">
+          <option value="351" >Ordinario Privado</option>
+          <option value="421.20" >Extraordinario Privado</option>
+          <option value="254" >Ordinario Público</option>
+          <option value="304.80" >Extraordinario Público</option>
+      </select>
+      </div>
+      <p><button type="button" class="btn-dark" onclick="clic2()">TOTAL</button></p>
+      <p><h2>$ <span id="spTotal0"></span></h2></p>
+      <br>
+    </form>
+    
+    </div></div>
+      
+<!-- BARRA PRESUPUESTO -->
+<div class="row mt-2 p-3 mb-2 bg-light" id="detallado">
+  <div class="col-sm-12">
+    <h2><p>Cálculo Detallado:</p></h2>
+    </div>
+    <div class="col-sm-9">
+
+<table class="table table-sm table-striped">
+    <thead class="thead-dark">
+    <form id="presupuesto">
+     <tr>
+     <th>Fecha/s (Opcional)</th>
+     
+     <th>Horas</th>
+     
+     <th>Servicio</th>
+     <th>Importe</th>
+     </tr>
+     </thead>
+     <tr>
+     <td><input type="text" class="form-control form-control-sm" id="datepicker"></td>
+     
+     <td><input type="number" class="form-control form-control-sm" id= "servicio" name="servicio" size="3" value="0">        </td>
+     
+     <td><select id="horas" class="form-control form-control-sm" name="horas">
+         <option value="351" >Ordinario Privado</option>
+         <option value="421.20" >Extraordinario Privado</option>
+         <option value="254" >Ordinario Público</option>
+         <option value="304.80" >Extraordinario Público</option>
+     </select></td>
+     <td><span id="spTotal"></span></td>
+     </tr>
+
+     <tr>
+     <td><input type="text" class="form-control form-control-sm" id="datepicker2"></td>
+   
+     <td><input type="number" class="form-control form-control-sm" id= "servicio2" name="servicio2" size="3" value="0">        </td>
+     <td><select id="horas2" class="form-control form-control-sm" name="horas2">
+         <option value="351" >Ordinario Privado</option>
+         <option value="421.20" >Extraordinario Privado</option>
+         <option value="254" >Ordinario Público</option>
+         <option value="304.80" >Extraordinario Público</option>
+     </select></td>
+     <td><span id="spTotal2"></span></td>
+     </tr>
+
+     <tr>
+         <td><input type="text" class="form-control form-control-sm" id="datepicker3"></td>
+         
+         <td><input type="number" class="form-control form-control-sm"id= "servicio3" name="servicio3" size="3" value="0">        </td>
+         <td><select id="horas3" class="form-control form-control-sm" name="horas3">
+             <option value="351" >Ordinario Privado</option>
+             <option value="421.20" >Extraordinario Privado</option>
+             <option value="254" >Ordinario Público</option>
+             <option value="304.80" >Extraordinario Público</option>
+         </select></td>
+         <td><span id="spTotal3"></span></td>
+         </tr>
+
+       <tr>
+           <td><input type="text" class="form-control form-control-sm" id="datepicker4"></td>
+        
+           <td><input type="number" class="form-control form-control-sm" id= "servicio4" name="servicio4" size="3" value="0">        </td>
+           <td><select id="horas4" class="form-control form-control-sm" name="horas4">
+               <option value="351" >Ordinario Privado</option>
+               <option value="421.20" >Extraordinario Privado</option>
+               <option value="254" >Ordinario Público</option>
+               <option value="304.80" >Extraordinario Público</option>
+           </select></td>
+           <td><span id="spTotal4"></span></td>
+           </tr>
+          <tr>
+               <td><input type="text" class="form-control form-control-sm" id="datepicker5"></td>
+             
+               <td><input type="number" class="form-control form-control-sm" id= "servicio5" name="servicio5" size="3" value="0">        </td>
+               <td><select id="horas5" class="form-control form-control-sm" name="horas5">
+                   <option value="351" >Ordinario Privado</option>
+                   <option value="421.20" >Extraordinario Privado</option>
+                   <option value="254" >Ordinario Público</option>
+                   <option value="304.80" >Extraordinario Público</option>
+               </select></td>
+               <td><span id="spTotal5"></span></td>
+               </tr>
+         
+                <tr>
+          <td><input type="text" class="form-control form-control-sm" id="datepicker6"></td>
+         
+          <td><input type="number" class="form-control form-control-sm"  id= "servicio6" name="servicio6" size="3" value="0">        </td>
+          <td><select id="horas6"  class="form-control form-control-sm" name="horas6">
+              <option value="351" >Ordinario Privado</option>
+              <option value="421.20" >Extraordinario Privado</option>
+              <option value="254" >Ordinario Público</option>
+              <option value="304.80" >Extraordinario Público</option>
+          </select></td>
+          <td><span id="spTotal6"></span></td>
+          </tr>
+          <tr>
+              <td><input type="text" class="form-control form-control-sm" id="datepicker7"></td>
+            
+              <td><input type="number" class="form-control form-control-sm" id= "servicio7" name="servicio7" size="3" value="0">        </td>
+              <td><select id="horas7" class="form-control form-control-sm" name="horas7">
+                  <option value="351" >Ordinario Privado</option>
+                  <option value="421.20" >Extraordinario Privado</option>
+                  <option value="254" >Ordinario Público</option>
+                  <option value="304.80" >Extraordinario Público</option>
+              </select></td>
+              <td><span id="spTotal7"></span></td>
+                   </tr>
+                     
+       <tr>
+           <td><input type="text" class="form-control form-control-sm" id="datepicker8"></td>
+           
+           <td><input type="number" class="form-control form-control-sm" id= "servicio8" name="servicio8" size="3" value="0">        </td>
+           <td><select id="horas8" class="form-control form-control-sm" name="horas8">
+               <option value="351.00" >Ordinario Privado</option>
+               <option value="421.20" >Extraordinario Privado</option>
+               <option value="254.00" >Ordinario Público</option>
+               <option value="304.80" >Extraordinario Público</option>
+           </select></td>
+           <td><span id="spTotal8"></span></td>
+           </tr>
+           <tr>
+               <td><input type="text" class="form-control form-control-sm" id="datepicker9"></td>
+               
+               <td><input type="number" class="form-control form-control-sm" id= "servicio9" name="servicio9" size="3" value="0">        </td>
+               <td><select id="horas9" class="form-control form-control-sm" name="horas9">
+                   <option value="351" >Ordinario Privado</option>
+                   <option value="421.20" >Extraordinario Privado</option>
+                   <option value="254" >Ordinario Público</option>
+                   <option value="304.80" >Extraordinario Público</option>
+               </select></td>
+               <td><span id="spTotal9"></span></td>
+               </tr>
+               <tr>
+                   <td><input type="text" class="form-control form-control-sm" id="datepicker10"></td>
+                   
+                   <td><input type="number" class="form-control form-control-sm" id= "servicio10" name="servicio10" size="3" value="0">        </td>
+                   <td><select id="horas10" class="form-control form-control-sm" name="horas10">
+                       <option value="351" >Ordinario Privado</option>
+                       <option value="421.20" >Extraordinario Privado</option>
+                       <option value="254" >Ordinario Público</option>
+                       <option value="304.80" >Extraordinario Público</option>
+                   </select></td>
+                   <td><span id="spTotal10"></span></td>
+                   </tr>
+       
+    </form>
+ </table>
+ </div>
+ <div class="col-sm">
+
+
+      <p><button type="button" class="btn-dark" onclick="clic()">TOTAL</button></p>
+       <br>
+       <p>
+          <h3><span>Horas totales:</span> <span id="horastotal"></span></h3>
+          <h3><span>Total: $</span> <span id="final"></span></h3></p>
+           <br><br>
+ </div></div>
+           
+ <div class="row">
+  <div class="col-sm">
+           <table class="table table-sm table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Tipo de Servicio</th>
+                <th scope="col">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ordinario Privado</td>
+                <td>351.0</td>
+              </tr>
+              <tr>
+                <td>Extraordinario Privado</td>
+                <td>421.2</td>
+              </tr>
+              <tr>
+                <td>Ordinario Público</td>
+                <td>254.0</td>
+              </tr>
+              <tr>
+                <td>Extraordinario Público</td>
+                <td>304.8</td>
+              </tr>
+            </tbody>
+          </table><br>
+
+
+
+<button type="button" class="btn-dark" name="imprimir" value="Imprimir" onclick="window.print();">IMPRIMIR</button>
+</div><!-- div container -->
+</div></div>
+<!-- Footer -->
+<footer class="page-footer font-small bg-dark pt-4 text-light style="font-size: 06px;">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase">Adicionalesuri</h5>
+<p>Este sitio no posee relación alguna con la Policia de Santa Fe, .</p>
+adicionalesuri es un sitio meramente informativo, y no brinda consejo, 
+recomendación, asesoramiento o invitación de ningún tipo, ni de ninguna clase o naturaleza,
+para realizar actos y/u operaciones de cualquier tipo, clase o naturaleza. 
+Las fuentes de información aquí citadas son de público acceso. 
+Los cuadros mostrados en este sitio son elaborados sobre la base de los datos de público 
+acceso que en cada caso se indica, y constituyen propiedad intelectual amparada por la Ley 
+N°11.723. Los titulares de este sitio deslindan toda responsabilidad respecto de la posible 
+falta de precisión y/o veracidad y/o exactitud y/o integridad y/o vigencia de los datos y/o 
+de las fuentes de información de público acceso tenidos en consideración para la elaboración 
+del contenido de este sitio. Los titulares de este sitio no garantizan la precisión y/o veracidad
+y/o exactitud y/o integridad y/o vigencia de los datos mostrados en este sitio.
+Los titulares de este sitio deslindan toda responsabilidad respecto del uso que puedan 
+llegar a dar a la información y/o a los datos incluídos en el contenido de este sitio quienes
+accedan a este último. Los titulares de este sitio no se responabilizan por los eventuales 
+daños patrimoniales y/o perjuicios que pudieren resultar de decisiones adoptadas sobre la 
+base de los datos mostrados en este sitio por quienes accedan a este último. Los titulares de 
+este sitio no mantienen ni poseen ningún tipo de acuerdo, asociación, alianza o vínculo con los
+anunciantes que publicitan sus productos y/o servicios en este sitio más que la locación de
+espacios publicitarios. Los titulares de este sitio no se responsabilizan respecto de la 
+precisión y/o veracidad y/o exactitud y/o integridad y/o vigencia de los contenidos de las 
+piezas publicitarias o banners, por lo que tales contenidos son de exclusiva responsabilidad
+de los respectivos anunciantes.
+
+      </div>
+      <!-- Grid column -->
+
+          
+      </div>
+    
+     <div class="row mt-2 p-3 mb-2  bg-dark pt-4 text-light">
+      <p>WEBMASTER: SOLIDLUCHO@GMAIL.COM</p>
+    </div>
+
+</body>
+</html>
